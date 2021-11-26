@@ -17,6 +17,7 @@
 		9924DB03274F864C007095BF /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9924DB02274F864C007095BF /* libssl.a */; };
 		9924DB05274F8659007095BF /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9924DB04274F8659007095BF /* libcrypto.a */; };
 		9924DB09274F877D007095BF /* TMCryptoRSA.m in Sources */ = {isa = PBXBuildFile; fileRef = 9924DB08274F877C007095BF /* TMCryptoRSA.m */; };
+		9924DB0D2750796F007095BF /* TMRandomDRBG.m in Sources */ = {isa = PBXBuildFile; fileRef = 9924DB0C2750796F007095BF /* TMRandomDRBG.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,9 @@
 		9924DB04274F8659007095BF /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = openssl/lib/libcrypto.a; sourceTree = "<group>"; };
 		9924DB07274F877C007095BF /* TMCryptoRSA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMCryptoRSA.h; sourceTree = "<group>"; };
 		9924DB08274F877C007095BF /* TMCryptoRSA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMCryptoRSA.m; sourceTree = "<group>"; };
+		9924DB0B2750796F007095BF /* TMRandomDRBG.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMRandomDRBG.h; sourceTree = "<group>"; };
+		9924DB0C2750796F007095BF /* TMRandomDRBG.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMRandomDRBG.m; sourceTree = "<group>"; };
+		9924DB0E2750A036007095BF /* TMPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMPrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 		9924DAE7274F84C2007095BF /* TMOpenSSL */ = {
 			isa = PBXGroup;
 			children = (
+				9924DB0A27507953007095BF /* RANDOM */,
 				9924DB06274F8734007095BF /* RSA */,
 				9924DAE8274F84C2007095BF /* AppDelegate.h */,
 				9924DAE9274F84C2007095BF /* AppDelegate.m */,
@@ -83,6 +88,7 @@
 				9924DAF6274F84C9007095BF /* LaunchScreen.storyboard */,
 				9924DAF9274F84C9007095BF /* Info.plist */,
 				9924DAFA274F84C9007095BF /* main.m */,
+				9924DB0E2750A036007095BF /* TMPrefixHeader.pch */,
 			);
 			path = TMOpenSSL;
 			sourceTree = "<group>";
@@ -103,6 +109,15 @@
 				9924DB08274F877C007095BF /* TMCryptoRSA.m */,
 			);
 			path = RSA;
+			sourceTree = "<group>";
+		};
+		9924DB0A27507953007095BF /* RANDOM */ = {
+			isa = PBXGroup;
+			children = (
+				9924DB0B2750796F007095BF /* TMRandomDRBG.h */,
+				9924DB0C2750796F007095BF /* TMRandomDRBG.m */,
+			);
+			path = RANDOM;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +190,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9924DB0D2750796F007095BF /* TMRandomDRBG.m in Sources */,
 				9924DAF0274F84C2007095BF /* ViewController.m in Sources */,
 				9924DAEA274F84C2007095BF /* AppDelegate.m in Sources */,
 				9924DB09274F877D007095BF /* TMCryptoRSA.m in Sources */,
@@ -325,6 +341,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5WC353G536;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ./TMOpenSSL/TMPrefixHeader.pch;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/openssl/include";
 				INFOPLIST_FILE = TMOpenSSL/Info.plist;
@@ -358,6 +376,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5WC353G536;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ./TMOpenSSL/TMPrefixHeader.pch;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/openssl/include";
 				INFOPLIST_FILE = TMOpenSSL/Info.plist;

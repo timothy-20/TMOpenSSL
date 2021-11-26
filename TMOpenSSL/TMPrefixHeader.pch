@@ -1,0 +1,17 @@
+//
+//  TMPrefixHeader.pch
+//  TMOpenSSL
+//
+//  Created by 임정운 on 2021/11/26.
+//
+
+#ifndef TMPrefixHeader_pch
+#define TMPrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "TMCryptoRSA.h"
+#import "TMRandomDRBG.h"
+
+#endif /* TMPrefixHeader_pch */

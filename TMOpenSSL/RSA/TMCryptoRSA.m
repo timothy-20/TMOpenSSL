@@ -15,8 +15,11 @@
 
 -(EVP_PKEY *)modulus:(NSString *)modulus_str exponent:(NSString *)exponent_str
 {
-    unsigned long rsa_modulus;
+    unsigned long rsa_modulus = modulus_str.longLongValue;
+    NSLog(@"%lu", rsa_modulus);
+    
     unsigned long rsa_exponent;
+    
     OSSL_PARAM params[] = {
         OSSL_PARAM_ulong("n", &rsa_modulus),
         OSSL_PARAM_ulong("e", &rsa_exponent),

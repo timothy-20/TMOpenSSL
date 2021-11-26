@@ -11,6 +11,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TMCryptoRSA : NSObject
 
+- (id)modulus:(NSString *)modulus_str exponent:(NSString *)exponent_str;
+- (NSData *)plain_text:(NSString *)text public_key:(id)public_key error:(NSError **)error;
+
 @end
 
 NS_ASSUME_NONNULL_END
